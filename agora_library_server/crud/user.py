@@ -9,8 +9,11 @@ def get_user_by_username(username: str, db: Session):
     return user
 
 def create_user(db: Session, user: UserCreate):
-    db_user = User(user)
+    db_user = User(**user.dict())
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
     return db_user
+
+def get_all(db: Session):
+    return db.query(User).all()

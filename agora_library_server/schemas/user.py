@@ -2,7 +2,6 @@ from pydantic import BaseModel, EmailStr
 
 
 class UserCreate(BaseModel):
-    id: int
     name: str
     username: str
     email: EmailStr
@@ -14,7 +13,6 @@ class UserPublic(BaseModel):
     name: str
     username: str
     email: EmailStr
-
 
 class UserList(BaseModel):
     user: list[UserPublic]
