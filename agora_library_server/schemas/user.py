@@ -7,6 +7,8 @@ class UserCreate(BaseModel):
     email: EmailStr
     password: str
 
+class UserInDB(BaseModel):
+    hashed_password: str
 
 class UserPublic(BaseModel):
     id: int

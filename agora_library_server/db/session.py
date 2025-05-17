@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from agora_library_server.settings import config
+from agora_library_server.core.settings import config
 
 engine = create_engine(config.DATABASE_URL, echo=False)
 session_factory = sessionmaker(bind=engine)
